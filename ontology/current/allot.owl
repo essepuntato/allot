@@ -91,6 +91,7 @@ The ALLOT ontology is meant to be used to describe in detail the documental and 
     <!-- https://w3id.org/akn/ontology/allot/hasEmbodiment -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/akn/ontology/allot/hasEmbodiment">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/akn/ontology/allot/hasRelatedReference"/>
         <rdfs:domain rdf:resource="https://w3id.org/akn/ontology/allot/FRBRExpression"/>
         <rdfs:range rdf:resource="https://w3id.org/akn/ontology/allot/FRBRManifestation"/>
         <rdfs:comment xml:lang="en">This property allows one to specify the manifestation in which an expression is embodied.</rdfs:comment>
@@ -103,6 +104,7 @@ The ALLOT ontology is meant to be used to describe in detail the documental and 
     <!-- https://w3id.org/akn/ontology/allot/hasExemplar -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/akn/ontology/allot/hasExemplar">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/akn/ontology/allot/hasRelatedReference"/>
         <rdfs:domain rdf:resource="https://w3id.org/akn/ontology/allot/FRBRManifestation"/>
         <rdfs:range rdf:resource="https://w3id.org/akn/ontology/allot/FRBRItem"/>
         <rdfs:comment xml:lang="en">This property allows one to specify an exemplification of a manifestation.</rdfs:comment>
@@ -115,6 +117,7 @@ The ALLOT ontology is meant to be used to describe in detail the documental and 
     <!-- https://w3id.org/akn/ontology/allot/hasRealization -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/akn/ontology/allot/hasRealization">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/akn/ontology/allot/hasRelatedReference"/>
         <rdfs:domain rdf:resource="https://w3id.org/akn/ontology/allot/FRBRWork"/>
         <rdfs:range rdf:resource="https://w3id.org/akn/ontology/allot/FRBRExpression"/>
         <rdfs:comment xml:lang="en">This property allows one to specify the entities that realizes a work.</rdfs:comment>
@@ -173,6 +176,12 @@ The ALLOT ontology is meant to be used to describe in detail the documental and 
     <owl:Class rdf:about="https://w3id.org/akn/ontology/allot/Concept">
         <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Reference"/>
         <owl:disjointWith rdf:resource="https://w3id.org/akn/ontology/allot/Object"/>
+        <dc:description xml:lang="en">This class maps with the XML element &quot;TLCConcept&quot; in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_TLCConcept.html).</dc:description>
+        <rdfs:comment xml:lang="en">Any non-tangible notion or idea that can be referred to but does not fit the other top level classes. 
+
+E.g.: the approval of an act, peace, child, Mickey Mouse, John Constantine, a class of an ontology.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/akn/ontology/allot"/>
+        <rdfs:label xml:lang="en">concept</rdfs:label>
     </owl:Class>
     
 
@@ -181,6 +190,12 @@ The ALLOT ontology is meant to be used to describe in detail the documental and 
 
     <owl:Class rdf:about="https://w3id.org/akn/ontology/allot/Event">
         <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Reference"/>
+        <dc:description xml:lang="en">This class maps with the XML element &quot;TLCEvent&quot; in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_TLCEvent.html).</dc:description>
+        <rdfs:comment xml:lang="en">Something that happened, will happen, may happen or have lasted. 
+
+E.g.: the World War II, the coming into force of act 27, Sunday 26th of August 2012.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/akn/ontology/allot"/>
+        <rdfs:label xml:lang="en">event</rdfs:label>
     </owl:Class>
     
 
@@ -189,6 +204,12 @@ The ALLOT ontology is meant to be used to describe in detail the documental and 
 
     <owl:Class rdf:about="https://w3id.org/akn/ontology/allot/FRBRExpression">
         <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Reference"/>
+        <dc:description xml:lang="en">This class maps with the XML element &quot;FRBRExpression&quot; in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_FRBRExpression.html).</dc:description>
+        <rdfs:comment xml:lang="en">Any version of a FRBR Work whose content is specified and different from others for any reason: language, versions, etc. 
+
+E.g.: act 3 of 2005 as in the version following the amendments entered into force on July 3rd, 2006.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/akn/ontology/allot"/>
+        <rdfs:label xml:lang="en">expression</rdfs:label>
     </owl:Class>
     
 
@@ -197,6 +218,12 @@ The ALLOT ontology is meant to be used to describe in detail the documental and 
 
     <owl:Class rdf:about="https://w3id.org/akn/ontology/allot/FRBRItem">
         <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Reference"/>
+        <dc:description xml:lang="en">This class maps with the XML element &quot;FRBRItem&quot; in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_FRBRItem.html).</dc:description>
+        <rdfs:comment xml:lang="en">The physical copy of any manifestation, such as a sheet of paper on a desk or file stored somewhere in some computer on the net or disconnected. 
+
+E.g.: the file called act32005.pdf on my computer containing a PDF representation of act 3, 2005.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/akn/ontology/allot"/>
+        <rdfs:label xml:lang="en">item</rdfs:label>
     </owl:Class>
     
 
@@ -205,6 +232,12 @@ The ALLOT ontology is meant to be used to describe in detail the documental and 
 
     <owl:Class rdf:about="https://w3id.org/akn/ontology/allot/FRBRManifestation">
         <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Reference"/>
+        <dc:description xml:lang="en">This class maps with the XML element &quot;FRBRManifestation&quot; in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_FRBRManifestation.html).</dc:description>
+        <rdfs:comment xml:lang="en">Any electronic or physical format of a FRBR Expression: OOXML, ODT, XML, TIFF, PDF, print, etc. 
+
+E.g.: PDF representation of act 3 of 2005 as in the version following the amendments entered into force on July 3rd, 2006.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/akn/ontology/allot"/>
+        <rdfs:label xml:lang="en">manifestation</rdfs:label>
     </owl:Class>
     
 
@@ -213,6 +246,12 @@ The ALLOT ontology is meant to be used to describe in detail the documental and 
 
     <owl:Class rdf:about="https://w3id.org/akn/ontology/allot/FRBRWork">
         <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Reference"/>
+        <dc:description xml:lang="en">This class maps with the XML element &quot;FRBRWork&quot; in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_FRBRWork.html).</dc:description>
+        <rdfs:comment xml:lang="en">The abstract concept of a legal resource. 
+
+E.g.: act 3 of 2005.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/akn/ontology/allot"/>
+        <rdfs:label xml:lang="en">work</rdfs:label>
     </owl:Class>
     
 
@@ -221,6 +260,12 @@ The ALLOT ontology is meant to be used to describe in detail the documental and 
 
     <owl:Class rdf:about="https://w3id.org/akn/ontology/allot/Location">
         <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Reference"/>
+        <dc:description xml:lang="en">This class maps with the XML element &quot;TLCLocation&quot; in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_TLCLocation.html).</dc:description>
+        <rdfs:comment xml:lang="en">A location that can be referred to also using geographical coordinates. 
+
+E.g.: the Rio river, Marrakesh, the entrance to the Black Forrest.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/akn/ontology/allot"/>
+        <rdfs:label xml:lang="en">location</rdfs:label>
     </owl:Class>
     
 
@@ -229,6 +274,12 @@ The ALLOT ontology is meant to be used to describe in detail the documental and 
 
     <owl:Class rdf:about="https://w3id.org/akn/ontology/allot/Object">
         <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Reference"/>
+        <dc:description xml:lang="en">This class maps with the XML element &quot;TLCObject&quot; in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_TLCObject.html).</dc:description>
+        <rdfs:comment xml:lang="en">Anything concrete (i.e. made of atoms) that can be referred to but that does not fit the other top level classes.
+
+E.g.: a pen, a pet, a building.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/akn/ontology/allot"/>
+        <rdfs:label xml:lang="en">object</rdfs:label>
     </owl:Class>
     
 
@@ -238,6 +289,12 @@ The ALLOT ontology is meant to be used to describe in detail the documental and 
     <owl:Class rdf:about="https://w3id.org/akn/ontology/allot/Organization">
         <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Reference"/>
         <owl:disjointWith rdf:resource="https://w3id.org/akn/ontology/allot/Person"/>
+        <dc:description xml:lang="en">This class maps with the XML element &quot;TLCOrganization&quot; in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_TLCOrganization.html).</dc:description>
+        <rdfs:comment xml:lang="en">An institution or recognizable group of individuals. Organizations can be formal or informal, have a strong degree of internal organization or be completely anarchic, have their own name or be anonymous, have their own legal status or be impromptu groups 
+
+E.g.: the workers’ union, France, the Socialist party, the proponents of bill 103/32, the President of the Italian Republic.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/akn/ontology/allot"/>
+        <rdfs:label xml:lang="en">organization</rdfs:label>
     </owl:Class>
     
 
@@ -246,6 +303,12 @@ The ALLOT ontology is meant to be used to describe in detail the documental and 
 
     <owl:Class rdf:about="https://w3id.org/akn/ontology/allot/Person">
         <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Reference"/>
+        <dc:description xml:lang="en">This class maps with the XML element &quot;TLCPerson&quot; in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_TLCPerson.html).</dc:description>
+        <rdfs:comment xml:lang="en">A real human being, regardless whether he/she is alive or deceased, named or unnamed. For fictional person, see the class concept.
+
+E.g.: John Doe, the person with ID RSSMRA72H12L116B.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/akn/ontology/allot"/>
+        <rdfs:label xml:lang="en">person</rdfs:label>
     </owl:Class>
     
 
@@ -254,13 +317,24 @@ The ALLOT ontology is meant to be used to describe in detail the documental and 
 
     <owl:Class rdf:about="https://w3id.org/akn/ontology/allot/Process">
         <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Reference"/>
+        <dc:description xml:lang="en">This class maps with the XML element &quot;TLCProcess&quot; in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_TLCProcess.html).</dc:description>
+        <rdfs:comment xml:lang="en">A series of actions or steps directed to some end. 
+
+E.g.: the approval of act 317, the election of the 11th president of the senate.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/akn/ontology/allot"/>
+        <rdfs:label xml:lang="en">process</rdfs:label>
     </owl:Class>
     
 
 
     <!-- https://w3id.org/akn/ontology/allot/Reference -->
 
-    <owl:Class rdf:about="https://w3id.org/akn/ontology/allot/Reference"/>
+    <owl:Class rdf:about="https://w3id.org/akn/ontology/allot/Reference">
+        <dc:description xml:lang="en">This class maps with the XML element &quot;TLCReference&quot; in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_TLCReference.html).</dc:description>
+        <rdfs:comment xml:lang="en">A reference for any kind of entity.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/akn/ontology/allot"/>
+        <rdfs:label xml:lang="en">reference</rdfs:label>
+    </owl:Class>
     
 
 
@@ -268,6 +342,12 @@ The ALLOT ontology is meant to be used to describe in detail the documental and 
 
     <owl:Class rdf:about="https://w3id.org/akn/ontology/allot/Role">
         <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Reference"/>
+        <dc:description xml:lang="en">This class maps with the XML element &quot;TLCRole&quot; in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_TLCRole.html).</dc:description>
+        <rdfs:comment xml:lang="en">A part played by a person or an organization, in a certain situation. 
+
+E.g.: member of parliament, speaker, head of office, bill proposer.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/akn/ontology/allot"/>
+        <rdfs:label xml:lang="en">role</rdfs:label>
     </owl:Class>
     
 
@@ -276,129 +356,13 @@ The ALLOT ontology is meant to be used to describe in detail the documental and 
 
     <owl:Class rdf:about="https://w3id.org/akn/ontology/allot/Term">
         <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Reference"/>
-    </owl:Class>
-    
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Annotations
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/Concept">
-        <rdfs:label xml:lang="en">concept</rdfs:label>
-        <rdfs:isDefinedBy rdf:resource="https://w3id.org/akn/ontology/allot"/>
-        <rdfs:comment xml:lang="en">Any non-tangible notion or idea that can be referred to but does not fit the other top level classes. 
-
-E.g.: the approval of an act, peace, child, Mickey Mouse, John Constantine, a class of an ontology.</rdfs:comment>
-        <dc:description xml:lang="en">This class maps with the XML element &quot;TLCConcept&quot; in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_TLCConcept.html).</dc:description>
-    </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/Event">
-        <dc:description xml:lang="en">This class maps with the XML element &quot;TLCEvent&quot; in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_TLCEvent.html).</dc:description>
-        <rdfs:label xml:lang="en">event</rdfs:label>
-        <rdfs:isDefinedBy rdf:resource="https://w3id.org/akn/ontology/allot"/>
-        <rdfs:comment xml:lang="en">Something that happened, will happen, may happen or have lasted. 
-
-E.g.: the World War II, the coming into force of act 27, Sunday 26th of August 2012.</rdfs:comment>
-    </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/FRBRExpression">
-        <rdfs:comment xml:lang="en">Any version of a FRBR Work whose content is specified and different from others for any reason: language, versions, etc. 
-
-E.g.: act 3 of 2005 as in the version following the amendments entered into force on July 3rd, 2006.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://w3id.org/akn/ontology/allot"/>
-        <rdfs:label xml:lang="en">expression</rdfs:label>
-        <dc:description xml:lang="en">This class maps with the XML element &quot;FRBRExpression&quot; in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_FRBRExpression.html).</dc:description>
-    </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/FRBRItem">
-        <rdfs:isDefinedBy rdf:resource="https://w3id.org/akn/ontology/allot"/>
-        <rdfs:comment xml:lang="en">The physical copy of any manifestation, such as a sheet of paper on a desk or file stored somewhere in some computer on the net or disconnected. 
-
-E.g.: the file called act32005.pdf on my computer containing a PDF representation of act 3, 2005.</rdfs:comment>
-        <rdfs:label xml:lang="en">item</rdfs:label>
-        <dc:description xml:lang="en">This class maps with the XML element &quot;FRBRItem&quot; in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_FRBRItem.html).</dc:description>
-    </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/FRBRManifestation">
-        <rdfs:comment xml:lang="en">Any electronic or physical format of a FRBR Expression: OOXML, ODT, XML, TIFF, PDF, print, etc. 
-
-E.g.: PDF representation of act 3 of 2005 as in the version following the amendments entered into force on July 3rd, 2006.</rdfs:comment>
-        <dc:description xml:lang="en">This class maps with the XML element &quot;FRBRManifestation&quot; in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_FRBRManifestation.html).</dc:description>
-        <rdfs:label xml:lang="en">manifestation</rdfs:label>
-        <rdfs:isDefinedBy rdf:resource="https://w3id.org/akn/ontology/allot"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/FRBRWork">
-        <rdfs:comment xml:lang="en">The abstract concept of a legal resource. 
-
-E.g.: act 3 of 2005.</rdfs:comment>
-        <rdfs:label xml:lang="en">work</rdfs:label>
-        <dc:description xml:lang="en">This class maps with the XML element &quot;FRBRWork&quot; in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_FRBRWork.html).</dc:description>
-        <rdfs:isDefinedBy rdf:resource="https://w3id.org/akn/ontology/allot"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/Location">
-        <rdfs:comment xml:lang="en">A location that can be referred to also using geographical coordinates. 
-
-E.g.: the Rio river, Marrakesh, the entrance to the Black Forrest.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://w3id.org/akn/ontology/allot"/>
-        <rdfs:label xml:lang="en">location</rdfs:label>
-        <dc:description xml:lang="en">This class maps with the XML element &quot;TLCLocation&quot; in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_TLCLocation.html).</dc:description>
-    </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/Object">
-        <dc:description xml:lang="en">This class maps with the XML element &quot;TLCObject&quot; in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_TLCObject.html).</dc:description>
-        <rdfs:label xml:lang="en">object</rdfs:label>
-        <rdfs:isDefinedBy rdf:resource="https://w3id.org/akn/ontology/allot"/>
-        <rdfs:comment xml:lang="en">Anything concrete (i.e. made of atoms) that can be referred to but that does not fit the other top level classes.
-
-E.g.: a pen, a pet, a building.</rdfs:comment>
-    </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/Organization">
-        <dc:description xml:lang="en">This class maps with the XML element &quot;TLCOrganization&quot; in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_TLCOrganization.html).</dc:description>
-        <rdfs:label xml:lang="en">organization</rdfs:label>
-        <rdfs:isDefinedBy rdf:resource="https://w3id.org/akn/ontology/allot"/>
-        <rdfs:comment xml:lang="en">An institution or recognizable group of individuals. Organizations can be formal or informal, have a strong degree of internal organization or be completely anarchic, have their own name or be anonymous, have their own legal status or be impromptu groups 
-
-E.g.: the workers’ union, France, the Socialist party, the proponents of bill 103/32, the President of the Italian Republic.</rdfs:comment>
-    </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/Person">
-        <rdfs:comment xml:lang="en">A real human being, regardless whether he/she is alive or deceased, named or unnamed. For fictional person, see the class concept.
-
-E.g.: John Doe, the person with ID RSSMRA72H12L116B.</rdfs:comment>
-        <dc:description xml:lang="en">This class maps with the XML element &quot;TLCPerson&quot; in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_TLCPerson.html).</dc:description>
-        <rdfs:label xml:lang="en">person</rdfs:label>
-        <rdfs:isDefinedBy rdf:resource="https://w3id.org/akn/ontology/allot"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/Process">
-        <rdfs:isDefinedBy rdf:resource="https://w3id.org/akn/ontology/allot"/>
-        <rdfs:comment xml:lang="en">A series of actions or steps directed to some end. 
-
-E.g.: the approval of act 317, the election of the 11th president of the senate.</rdfs:comment>
-        <rdfs:label xml:lang="en">process</rdfs:label>
-        <dc:description xml:lang="en">This class maps with the XML element &quot;TLCProcess&quot; in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_TLCProcess.html).</dc:description>
-    </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/Reference">
-        <rdfs:label xml:lang="en">reference</rdfs:label>
-        <rdfs:isDefinedBy rdf:resource="https://w3id.org/akn/ontology/allot"/>
-        <dc:description xml:lang="en">This class maps with the XML element &quot;TLCReference&quot; in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_TLCReference.html).</dc:description>
-        <rdfs:comment xml:lang="en">A reference for any kind of entity.</rdfs:comment>
-    </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/Role">
-        <rdfs:isDefinedBy rdf:resource="https://w3id.org/akn/ontology/allot"/>
-        <rdfs:comment xml:lang="en">A part played by a person or an organization, in a certain situation. 
-
-E.g.: member of parliament, speaker, head of office, bill proposer.</rdfs:comment>
-        <dc:description xml:lang="en">This class maps with the XML element &quot;TLCRole&quot; in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_TLCRole.html).</dc:description>
-        <rdfs:label xml:lang="en">role</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/Term">
+        <dc:description xml:lang="en">This class maps with the XML element &quot;TLCTerm&quot; in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_TLCTerm.html).</dc:description>
         <rdfs:comment xml:lang="en">A word or group of words whose meaning is defined in a formal and precise manner by means of a specific concept. 
 
 E.g.: opening sentence, rebuttal, impeachment.</rdfs:comment>
-        <dc:description xml:lang="en">This class maps with the XML element &quot;TLCTerm&quot; in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_TLCTerm.html).</dc:description>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/akn/ontology/allot"/>
         <rdfs:label xml:lang="en">term</rdfs:label>
-    </rdf:Description>
+    </owl:Class>
     
 
 

@@ -24,8 +24,9 @@ from rdflib import Graph
 # Formats available
 formats = {
     "json-ld": "json",
-    "xml": "rdf",
-    "turtle": "ttl"
+    "xml": "xml",
+    "turtle": "ttl",
+    "nt": "nt"
 }
 
 

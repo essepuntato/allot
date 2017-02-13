@@ -84,21 +84,24 @@ E.g.: opening sentence, rebuttal, impeachment."""@en ;
     rdfs:comment "This property allows one to specify the manifestation in which an expression is embodied."@en ;
     rdfs:domain :FRBRExpression ;
     rdfs:isDefinedBy <https://w3id.org/akn/ontology/allot> ;
-    rdfs:range :FRBRManifestation .
+    rdfs:range :FRBRManifestation ;
+    rdfs:subPropertyOf :hasRelatedReference .
 
 :hasExemplar a owl:ObjectProperty ;
     rdfs:label "has exemplar"@en ;
     rdfs:comment "This property allows one to specify an exemplification of a manifestation."@en ;
     rdfs:domain :FRBRManifestation ;
     rdfs:isDefinedBy <https://w3id.org/akn/ontology/allot> ;
-    rdfs:range :FRBRItem .
+    rdfs:range :FRBRItem ;
+    rdfs:subPropertyOf :hasRelatedReference .
 
 :hasRealization a owl:ObjectProperty ;
     rdfs:label "has realization"@en ;
     rdfs:comment "This property allows one to specify the entities that realizes a work."@en ;
     rdfs:domain :FRBRWork ;
     rdfs:isDefinedBy <https://w3id.org/akn/ontology/allot> ;
-    rdfs:range :FRBRExpression .
+    rdfs:range :FRBRExpression ;
+    rdfs:subPropertyOf :hasRelatedReference .
 
 :mentions a owl:ObjectProperty ;
     rdfs:label "mentions"@en ;
@@ -125,13 +128,6 @@ E.g.: a pen, a pet, a building."""@en ;
 E.g.: John Doe, the person with ID RSSMRA72H12L116B."""@en ;
     rdfs:isDefinedBy <https://w3id.org/akn/ontology/allot> ;
     rdfs:subClassOf :Reference .
-
-:hasRelatedReference a owl:ObjectProperty ;
-    rdfs:label "has related reference"@en ;
-    rdfs:comment "This property allows one to link two instances of the class Reference that are related for some reason."@en ;
-    rdfs:domain :Reference ;
-    rdfs:isDefinedBy <https://w3id.org/akn/ontology/allot> ;
-    rdfs:range :Reference .
 
 :FRBRItem a owl:Class ;
     rdfs:label "item"@en ;
@@ -168,6 +164,13 @@ E.g.: act 3 of 2005 as in the version following the amendments entered into forc
 E.g.: PDF representation of act 3 of 2005 as in the version following the amendments entered into force on July 3rd, 2006."""@en ;
     rdfs:isDefinedBy <https://w3id.org/akn/ontology/allot> ;
     rdfs:subClassOf :Reference .
+
+:hasRelatedReference a owl:ObjectProperty ;
+    rdfs:label "has related reference"@en ;
+    rdfs:comment "This property allows one to link two instances of the class Reference that are related for some reason."@en ;
+    rdfs:domain :Reference ;
+    rdfs:isDefinedBy <https://w3id.org/akn/ontology/allot> ;
+    rdfs:range :Reference .
 
 :Reference a owl:Class ;
     rdfs:label "reference"@en ;

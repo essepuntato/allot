@@ -222,6 +222,11 @@
       {
         "@id": "https://w3id.org/akn/ontology/allot/FRBRManifestation"
       }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/akn/ontology/allot/hasRelatedReference"
+      }
     ]
   },
   {
@@ -265,26 +270,36 @@
     ]
   },
   {
-    "@id": "_:N1badd0a6b70e402f893d745df7469d9e",
+    "@id": "https://w3id.org/akn/ontology/allot/Role",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
-    "http://www.w3.org/2002/07/owl#unionOf": [
+    "http://purl.org/dc/elements/1.1/description": [
       {
-        "@list": [
-          {
-            "@id": "https://w3id.org/akn/ontology/allot/FRBRExpression"
-          },
-          {
-            "@id": "https://w3id.org/akn/ontology/allot/FRBRItem"
-          },
-          {
-            "@id": "https://w3id.org/akn/ontology/allot/FRBRManifestation"
-          },
-          {
-            "@id": "https://w3id.org/akn/ontology/allot/FRBRWork"
-          }
-        ]
+        "@language": "en",
+        "@value": "This class maps with the XML element \"TLCRole\" in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_TLCRole.html)."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "A part played by a person or an organization, in a certain situation. \n\nE.g.: member of parliament, speaker, head of office, bill proposer."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/akn/ontology/allot"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "role"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/akn/ontology/allot/Reference"
       }
     ]
   },
@@ -319,6 +334,11 @@
       {
         "@id": "https://w3id.org/akn/ontology/allot/FRBRItem"
       }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/akn/ontology/allot/hasRelatedReference"
+      }
     ]
   },
   {
@@ -352,6 +372,30 @@
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
         "@id": "https://w3id.org/akn/ontology/allot/Reference"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nb2435489659b47f9a01618bd0258c78f",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
+    ],
+    "http://www.w3.org/2002/07/owl#members": [
+      {
+        "@list": [
+          {
+            "@id": "https://w3id.org/akn/ontology/allot/FRBRExpression"
+          },
+          {
+            "@id": "https://w3id.org/akn/ontology/allot/FRBRItem"
+          },
+          {
+            "@id": "https://w3id.org/akn/ontology/allot/FRBRManifestation"
+          },
+          {
+            "@id": "https://w3id.org/akn/ontology/allot/FRBRWork"
+          }
+        ]
       }
     ]
   },
@@ -442,7 +486,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "_:N1badd0a6b70e402f893d745df7469d9e"
+        "@id": "_:N94caec0f2c0c4e758191f49c32dd41e0"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -488,40 +532,6 @@
       {
         "@language": "en",
         "@value": "reference"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/akn/ontology/allot/Role",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/elements/1.1/description": [
-      {
-        "@language": "en",
-        "@value": "This class maps with the XML element \"TLCRole\" in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_TLCRole.html)."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@language": "en",
-        "@value": "A part played by a person or an organization, in a certain situation. \n\nE.g.: member of parliament, speaker, head of office, bill proposer."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/akn/ontology/allot"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "role"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/akn/ontology/allot/Reference"
       }
     ]
   },
@@ -594,30 +604,6 @@
     ]
   },
   {
-    "@id": "_:N2d49c287632249e7b87a47022afd4667",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
-    ],
-    "http://www.w3.org/2002/07/owl#members": [
-      {
-        "@list": [
-          {
-            "@id": "https://w3id.org/akn/ontology/allot/FRBRExpression"
-          },
-          {
-            "@id": "https://w3id.org/akn/ontology/allot/FRBRItem"
-          },
-          {
-            "@id": "https://w3id.org/akn/ontology/allot/FRBRManifestation"
-          },
-          {
-            "@id": "https://w3id.org/akn/ontology/allot/FRBRWork"
-          }
-        ]
-      }
-    ]
-  },
-  {
     "@id": "https://w3id.org/akn/ontology/allot/hasRealization",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
@@ -647,6 +633,35 @@
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
         "@id": "https://w3id.org/akn/ontology/allot/FRBRExpression"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/akn/ontology/allot/hasRelatedReference"
+      }
+    ]
+  },
+  {
+    "@id": "_:N94caec0f2c0c4e758191f49c32dd41e0",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@list": [
+          {
+            "@id": "https://w3id.org/akn/ontology/allot/FRBRExpression"
+          },
+          {
+            "@id": "https://w3id.org/akn/ontology/allot/FRBRItem"
+          },
+          {
+            "@id": "https://w3id.org/akn/ontology/allot/FRBRManifestation"
+          },
+          {
+            "@id": "https://w3id.org/akn/ontology/allot/FRBRWork"
+          }
+        ]
       }
     ]
   },
@@ -694,19 +709,19 @@
         "@value": "Fabio Vitali (http://orcid.org/0000-0002-7562-5203)"
       },
       {
-        "@value": "Gioele Barabucci (http://orcid.org/0000-0003-4586-0111)"
+        "@value": "Silvio Peroni (http://orcid.org/0000-0003-0530-4305)"
       },
       {
         "@value": "Angelo Di Iorio (http://orcid.org/0000-0002-6893-7452)"
       },
       {
-        "@value": "Silvio Peroni (http://orcid.org/0000-0003-0530-4305)"
-      },
-      {
-        "@value": "Monica Palmirani (http://orcid.org/0000-0002-8557-8084)"
+        "@value": "Gioele Barabucci (http://orcid.org/0000-0003-4586-0111)"
       },
       {
         "@value": "Francesco Poggi (http://orcid.org/0000-0001-6577-5606)"
+      },
+      {
+        "@value": "Monica Palmirani (http://orcid.org/0000-0002-8557-8084)"
       }
     ],
     "http://purl.org/dc/elements/1.1/description": [
