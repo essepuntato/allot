@@ -6,10 +6,14 @@
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:allot="https://w3id.org/akn/ontology/allot/"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="https://w3id.org/akn/ontology/allot">
-        <owl:versionIRI rdf:resource="https://w3id.org/akn/ontology/allot/2017-01-31"/>
+        <owl:versionIRI rdf:resource="https://w3id.org/akn/ontology/allot/2017-04-21"/>
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/bfo/2.0/bfo.owl"/>
+        <owl:imports rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl"/>
         <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Monica Palmirani (http://orcid.org/0000-0002-8557-8084)</dc:creator>
         <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ALLOT: A Light Legal Ontology On TLCs</dc:title>
         <rdfs:comment xml:lang="en">One of the peculiarities of Akoma Ntoso (https://w3id.org/akn) is the idea of non-ontology: the use of few XML tags (prefixed with either &quot;TLC&quot; of &quot;FRBR&quot;) that would refer some how to top level classes (TLCs) defined in an ontology for describing entities referenced in legal documents. 
@@ -18,7 +22,7 @@ ALLOT (A Light Legal Ontology on TLCs) provides a formal implementation of such 
         <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fabio Vitali (http://orcid.org/0000-0002-7562-5203)</dc:creator>
         <owl:priorVersion rdf:resource="http://akn.web.cs.unibo.it/allot/core.owl"/>
         <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Silvio Peroni (http://orcid.org/0000-0003-0530-4305)</dc:creator>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">January 31, 2017</owl:versionInfo>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">April 21, 2017</owl:versionInfo>
         <rdfs:label xml:lang="en">ALLOT</rdfs:label>
         <dc:description xml:lang="en">Akoma Ntoso (https://w3id.org/akn) is an open XML standard for parliamentary, legislative and judiciary documents. The Akoma Ntoso specifications, instead of forcing document authors to stick to one particular ontology, specify a very broad set of general guidelines that an ontology should conform to in order to be used in conjunction with Akoma Ntoso documents. These informal guidelines are mentioned with the name of *non-ontology*, and are implicitly referred by with specific XML tags (prefixed by &quot;TLC&quot; or &quot;FRBR&quot;) in Akoma Ntoso documents, each referring to a particular (an informal) top level class (TLC).
 
@@ -34,7 +38,9 @@ All this informality is needed to allow a great degree of flexibility in what ca
 
 ALLOT is a proof-of-concept ontology we developed following the Akoma Ntoso non-ontology, its associated guidelines and best practices. ALLOT is available at https://w3id.org/akn/ontology/allot, while all the material related with the ontology is available on the ALLOT GitHub repository at https://github.com/essepuntato/allot. The current version of ALLOT is actually based on a previous implementation named ALLOT Core and available at http://akn.web.cs.unibo.it/allot/core.owl. 
 
-The ALLOT ontology is meant to be used to describe in detail the documental and non-documental references (i.e. any entity) present in Akoma Ntoso documents. ALLOT can also be used to bridge knowledge bases extracted from Akoma Ntoso documents to knowledge bases that use other ontologies such as Metalex (http://justinian.leibnizcenter.org/MetaLex/metalex-cen.owl).</dc:description>
+The ALLOT ontology is meant to be used to describe in detail the documental and non-documental references (i.e. any entity) present in Akoma Ntoso documents. ALLOT can also be used to bridge knowledge bases extracted from Akoma Ntoso documents to knowledge bases that use other ontologies such as Metalex (http://justinian.leibnizcenter.org/MetaLex/metalex-cen.owl).
+
+In order to be reusable in different contexts, ALLOT has been aligned to two foundational ontologies, i.e. DOLCE and BFO. The alignment is still under revision and can slightly change in future releases of the ontology.</dc:description>
         <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Angelo Di Iorio (http://orcid.org/0000-0002-6893-7452)</dc:creator>
         <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Francesco Poggi (http://orcid.org/0000-0001-6577-5606)</dc:creator>
         <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gioele Barabucci (http://orcid.org/0000-0003-4586-0111)</dc:creator>
@@ -174,6 +180,8 @@ The ALLOT ontology is meant to be used to describe in detail the documental and 
     <!-- https://w3id.org/akn/ontology/allot/Concept -->
 
     <owl:Class rdf:about="https://w3id.org/akn/ontology/allot/Concept">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialObject"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Reference"/>
         <owl:disjointWith rdf:resource="https://w3id.org/akn/ontology/allot/Object"/>
         <dc:description xml:lang="en">This class maps with the XML element &quot;TLCConcept&quot; in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_TLCConcept.html).</dc:description>
@@ -189,6 +197,8 @@ E.g.: the approval of an act, peace, child, Mickey Mouse, John Constantine, a cl
     <!-- https://w3id.org/akn/ontology/allot/Event -->
 
     <owl:Class rdf:about="https://w3id.org/akn/ontology/allot/Event">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000003"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Reference"/>
         <dc:description xml:lang="en">This class maps with the XML element &quot;TLCEvent&quot; in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_TLCEvent.html).</dc:description>
         <rdfs:comment xml:lang="en">Something that happened, will happen, may happen or have lasted. 
@@ -203,7 +213,8 @@ E.g.: the World War II, the coming into force of act 27, Sunday 26th of August 2
     <!-- https://w3id.org/akn/ontology/allot/FRBRExpression -->
 
     <owl:Class rdf:about="https://w3id.org/akn/ontology/allot/FRBRExpression">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Reference"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Concept"/>
         <dc:description xml:lang="en">This class maps with the XML element &quot;FRBRExpression&quot; in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_FRBRExpression.html).</dc:description>
         <rdfs:comment xml:lang="en">Any version of a FRBR Work whose content is specified and different from others for any reason: language, versions, etc. 
 
@@ -217,7 +228,8 @@ E.g.: act 3 of 2005 as in the version following the amendments entered into forc
     <!-- https://w3id.org/akn/ontology/allot/FRBRItem -->
 
     <owl:Class rdf:about="https://w3id.org/akn/ontology/allot/FRBRItem">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Reference"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationRealization"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Object"/>
         <dc:description xml:lang="en">This class maps with the XML element &quot;FRBRItem&quot; in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_FRBRItem.html).</dc:description>
         <rdfs:comment xml:lang="en">The physical copy of any manifestation, such as a sheet of paper on a desk or file stored somewhere in some computer on the net or disconnected. 
 
@@ -231,6 +243,8 @@ E.g.: the file called act32005.pdf on my computer containing a PDF representatio
     <!-- https://w3id.org/akn/ontology/allot/FRBRManifestation -->
 
     <owl:Class rdf:about="https://w3id.org/akn/ontology/allot/FRBRManifestation">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Reference"/>
         <dc:description xml:lang="en">This class maps with the XML element &quot;FRBRManifestation&quot; in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_FRBRManifestation.html).</dc:description>
         <rdfs:comment xml:lang="en">Any electronic or physical format of a FRBR Expression: OOXML, ODT, XML, TIFF, PDF, print, etc. 
@@ -245,7 +259,7 @@ E.g.: PDF representation of act 3 of 2005 as in the version following the amendm
     <!-- https://w3id.org/akn/ontology/allot/FRBRWork -->
 
     <owl:Class rdf:about="https://w3id.org/akn/ontology/allot/FRBRWork">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Reference"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Concept"/>
         <dc:description xml:lang="en">This class maps with the XML element &quot;FRBRWork&quot; in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_FRBRWork.html).</dc:description>
         <rdfs:comment xml:lang="en">The abstract concept of a legal resource. 
 
@@ -259,7 +273,9 @@ E.g.: act 3 of 2005.</rdfs:comment>
     <!-- https://w3id.org/akn/ontology/allot/Location -->
 
     <owl:Class rdf:about="https://w3id.org/akn/ontology/allot/Location">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Reference"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000141"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Concept"/>
         <dc:description xml:lang="en">This class maps with the XML element &quot;TLCLocation&quot; in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_TLCLocation.html).</dc:description>
         <rdfs:comment xml:lang="en">A location that can be referred to also using geographical coordinates. 
 
@@ -273,6 +289,8 @@ E.g.: the Rio river, Marrakesh, the entrance to the Black Forrest.</rdfs:comment
     <!-- https://w3id.org/akn/ontology/allot/Object -->
 
     <owl:Class rdf:about="https://w3id.org/akn/ontology/allot/Object">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Reference"/>
         <dc:description xml:lang="en">This class maps with the XML element &quot;TLCObject&quot; in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_TLCObject.html).</dc:description>
         <rdfs:comment xml:lang="en">Anything concrete (i.e. made of atoms) that can be referred to but that does not fit the other top level classes.
@@ -287,7 +305,9 @@ E.g.: a pen, a pet, a building.</rdfs:comment>
     <!-- https://w3id.org/akn/ontology/allot/Organization -->
 
     <owl:Class rdf:about="https://w3id.org/akn/ontology/allot/Organization">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Reference"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000027"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Organization"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Concept"/>
         <owl:disjointWith rdf:resource="https://w3id.org/akn/ontology/allot/Person"/>
         <dc:description xml:lang="en">This class maps with the XML element &quot;TLCOrganization&quot; in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_TLCOrganization.html).</dc:description>
         <rdfs:comment xml:lang="en">An institution or recognizable group of individuals. Organizations can be formal or informal, have a strong degree of internal organization or be completely anarchic, have their own name or be anonymous, have their own legal status or be impromptu groups 
@@ -302,7 +322,8 @@ E.g.: the workers’ union, France, the Socialist party, the proponents of bill 
     <!-- https://w3id.org/akn/ontology/allot/Person -->
 
     <owl:Class rdf:about="https://w3id.org/akn/ontology/allot/Person">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Reference"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#NaturalPerson"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Object"/>
         <dc:description xml:lang="en">This class maps with the XML element &quot;TLCPerson&quot; in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_TLCPerson.html).</dc:description>
         <rdfs:comment xml:lang="en">A real human being, regardless whether he/she is alive or deceased, named or unnamed. For fictional person, see the class concept.
 
@@ -316,7 +337,9 @@ E.g.: John Doe, the person with ID RSSMRA72H12L116B.</rdfs:comment>
     <!-- https://w3id.org/akn/ontology/allot/Process -->
 
     <owl:Class rdf:about="https://w3id.org/akn/ontology/allot/Process">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Reference"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Process"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Event"/>
         <dc:description xml:lang="en">This class maps with the XML element &quot;TLCProcess&quot; in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_TLCProcess.html).</dc:description>
         <rdfs:comment xml:lang="en">A series of actions or steps directed to some end. 
 
@@ -330,6 +353,9 @@ E.g.: the approval of act 317, the election of the 11th president of the senate.
     <!-- https://w3id.org/akn/ontology/allot/Reference -->
 
     <owl:Class rdf:about="https://w3id.org/akn/ontology/allot/Reference">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <dc:description xml:lang="en">This class maps with the XML element &quot;TLCReference&quot; in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_TLCReference.html).</dc:description>
         <rdfs:comment xml:lang="en">A reference for any kind of entity.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/akn/ontology/allot"/>
@@ -341,7 +367,9 @@ E.g.: the approval of act 317, the election of the 11th president of the senate.
     <!-- https://w3id.org/akn/ontology/allot/Role -->
 
     <owl:Class rdf:about="https://w3id.org/akn/ontology/allot/Role">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Reference"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Concept"/>
         <dc:description xml:lang="en">This class maps with the XML element &quot;TLCRole&quot; in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_TLCRole.html).</dc:description>
         <rdfs:comment xml:lang="en">A part played by a person or an organization, in a certain situation. 
 
@@ -355,7 +383,8 @@ E.g.: member of parliament, speaker, head of office, bill proposer.</rdfs:commen
     <!-- https://w3id.org/akn/ontology/allot/Term -->
 
     <owl:Class rdf:about="https://w3id.org/akn/ontology/allot/Term">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Reference"/>
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Concept"/>
         <dc:description xml:lang="en">This class maps with the XML element &quot;TLCTerm&quot; in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_TLCTerm.html).</dc:description>
         <rdfs:comment xml:lang="en">A word or group of words whose meaning is defined in a formal and precise manner by means of a specific concept. 
 
@@ -387,5 +416,5 @@ E.g.: opening sentence, rebuttal, impeachment.</rdfs:comment>
 
 
 
-<!-- Generated by the OWL API (version 4.2.1.20160306-0033) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
 

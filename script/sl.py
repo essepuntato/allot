@@ -11,9 +11,12 @@ import json
 
 class StaticLODE(object):
     def __init__(self, doc_dir, onto_map, lang="en", imported_url=None,
-                 lode_url="http://eelst.cs.unibo.it/apps/LODE", repl=None):
+                 lode_url="http://eelst.cs.unibo.it/apps/LODE", repl=None, lode_func=None):
         self.doc_dir = doc_dir
-        self.lode_url = lode_url + "/extract?owlapi=true&lang=%s&url=" % lang
+        if lode_func is None:
+            self.lode_url = lode_url + "/extract?owlapi=true&lang=%s&url=" % lang
+        else:
+            self.lode_url = lode_url + "/extract?%s&lang=%s&url=" % (lode_func, lang)
         self.imported_basepath = lode_url
         self.imported_url = imported_url
         self.onto_map = onto_map
@@ -73,6 +76,8 @@ if __name__ == "__main__":
                                  "(default: 'en').")
     arg_parser.add_argument("-repl", "--string-replace", dest="string_replace",
                             help="A 'source->replace' regular expression for replacement of strings.")
+    arg_parser.add_argument("-f", "--lode-functions", dest="lode_func",
+                            help="The particular function to be used when calling LODE (default: 'owlapi=true').")
     args = arg_parser.parse_args()
 
     all_ontologies_url = {}
@@ -87,7 +92,7 @@ if __name__ == "__main__":
             all_ontologies_url.update(json.load(f))
 
     sl = StaticLODE(args.output_dir, all_ontologies_url, args.language,
-                    args.source_material_url, args.lode_url, args.string_replace)
+                    args.source_material_url, args.lode_url, args.string_replace, args.lode_func)
 
     sl.create_documentation()
 
