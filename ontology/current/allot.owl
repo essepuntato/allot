@@ -183,7 +183,6 @@ In order to be reusable in different contexts, ALLOT has been aligned to two fou
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
         <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialObject"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Reference"/>
-        <owl:disjointWith rdf:resource="https://w3id.org/akn/ontology/allot/Object"/>
         <dc:description xml:lang="en">This class maps with the XML element &quot;TLCConcept&quot; in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_TLCConcept.html).</dc:description>
         <rdfs:comment xml:lang="en">Any non-tangible notion or idea that can be referred to but does not fit the other top level classes. 
 
@@ -230,6 +229,7 @@ E.g.: act 3 of 2005 as in the version following the amendments entered into forc
     <owl:Class rdf:about="https://w3id.org/akn/ontology/allot/FRBRItem">
         <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationRealization"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Object"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/akn/ontology/allot/Person"/>
         <dc:description xml:lang="en">This class maps with the XML element &quot;FRBRItem&quot; in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_FRBRItem.html).</dc:description>
         <rdfs:comment xml:lang="en">The physical copy of any manifestation, such as a sheet of paper on a desk or file stored somewhere in some computer on the net or disconnected. 
 
@@ -308,7 +308,6 @@ E.g.: a pen, a pet, a building.</rdfs:comment>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000027"/>
         <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Organization"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/akn/ontology/allot/Concept"/>
-        <owl:disjointWith rdf:resource="https://w3id.org/akn/ontology/allot/Person"/>
         <dc:description xml:lang="en">This class maps with the XML element &quot;TLCOrganization&quot; in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_TLCOrganization.html).</dc:description>
         <rdfs:comment xml:lang="en">An institution or recognizable group of individuals. Organizations can be formal or informal, have a strong degree of internal organization or be completely anarchic, have their own name or be anonymous, have their own legal status or be impromptu groups 
 
@@ -406,10 +405,30 @@ E.g.: opening sentence, rebuttal, impeachment.</rdfs:comment>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/Concept"/>
+            <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/Event"/>
+            <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/FRBRManifestation"/>
+            <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/Object"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/FRBRExpression"/>
             <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/FRBRItem"/>
             <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/FRBRManifestation"/>
             <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/FRBRWork"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/FRBRExpression"/>
+            <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/FRBRWork"/>
+            <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/Location"/>
+            <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/Organization"/>
+            <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/Role"/>
+            <rdf:Description rdf:about="https://w3id.org/akn/ontology/allot/Term"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>

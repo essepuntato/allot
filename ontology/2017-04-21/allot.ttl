@@ -16,29 +16,6 @@ dc:description a owl:AnnotationProperty .
 
 dc:title a owl:AnnotationProperty .
 
-:Location a owl:Class ;
-    rdfs:label "location"@en ;
-    dc:description "This class maps with the XML element \"TLCLocation\" in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_TLCLocation.html)."@en ;
-    rdfs:comment """A location that can be referred to also using geographical coordinates. 
-
-E.g.: the Rio river, Marrakesh, the entrance to the Black Forrest."""@en ;
-    rdfs:isDefinedBy <https://w3id.org/akn/ontology/allot> ;
-    rdfs:subClassOf obo:BFO_0000141,
-        <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place>,
-        :Concept .
-
-:Organization a owl:Class ;
-    rdfs:label "organization"@en ;
-    dc:description "This class maps with the XML element \"TLCOrganization\" in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_TLCOrganization.html)."@en ;
-    rdfs:comment """An institution or recognizable group of individuals. Organizations can be formal or informal, have a strong degree of internal organization or be completely anarchic, have their own name or be anonymous, have their own legal status or be impromptu groups 
-
-E.g.: the workers’ union, France, the Socialist party, the proponents of bill 103/32, the President of the Italian Republic."""@en ;
-    rdfs:isDefinedBy <https://w3id.org/akn/ontology/allot> ;
-    rdfs:subClassOf obo:BFO_0000027,
-        <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Organization>,
-        :Concept ;
-    owl:disjointWith :Person .
-
 :Process a owl:Class ;
     rdfs:label "process"@en ;
     dc:description "This class maps with the XML element \"TLCProcess\" in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_TLCProcess.html)."@en ;
@@ -49,27 +26,6 @@ E.g.: the approval of act 317, the election of the 11th president of the senate.
     rdfs:subClassOf obo:BFO_0000015,
         <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Process>,
         :Event .
-
-:Role a owl:Class ;
-    rdfs:label "role"@en ;
-    dc:description "This class maps with the XML element \"TLCRole\" in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_TLCRole.html)."@en ;
-    rdfs:comment """A part played by a person or an organization, in a certain situation. 
-
-E.g.: member of parliament, speaker, head of office, bill proposer."""@en ;
-    rdfs:isDefinedBy <https://w3id.org/akn/ontology/allot> ;
-    rdfs:subClassOf obo:BFO_0000023,
-        <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role>,
-        :Concept .
-
-:Term a owl:Class ;
-    rdfs:label "term"@en ;
-    dc:description "This class maps with the XML element \"TLCTerm\" in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_TLCTerm.html)."@en ;
-    rdfs:comment """A word or group of words whose meaning is defined in a formal and precise manner by means of a specific concept. 
-
-E.g.: opening sentence, rebuttal, impeachment."""@en ;
-    rdfs:isDefinedBy <https://w3id.org/akn/ontology/allot> ;
-    rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject>,
-        :Concept .
 
 :hasEmbodiment a owl:ObjectProperty ;
     rdfs:label "has embodiment"@en ;
@@ -103,16 +59,27 @@ E.g.: opening sentence, rebuttal, impeachment."""@en ;
     rdfs:isDefinedBy <https://w3id.org/akn/ontology/allot> ;
     rdfs:subPropertyOf :hasRelatedReference .
 
-:Event a owl:Class ;
-    rdfs:label "event"@en ;
-    dc:description "This class maps with the XML element \"TLCEvent\" in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_TLCEvent.html)."@en ;
-    rdfs:comment """Something that happened, will happen, may happen or have lasted. 
+:Location a owl:Class ;
+    rdfs:label "location"@en ;
+    dc:description "This class maps with the XML element \"TLCLocation\" in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_TLCLocation.html)."@en ;
+    rdfs:comment """A location that can be referred to also using geographical coordinates. 
 
-E.g.: the World War II, the coming into force of act 27, Sunday 26th of August 2012."""@en ;
+E.g.: the Rio river, Marrakesh, the entrance to the Black Forrest."""@en ;
     rdfs:isDefinedBy <https://w3id.org/akn/ontology/allot> ;
-    rdfs:subClassOf obo:BFO_0000003,
-        <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event>,
-        :Reference .
+    rdfs:subClassOf obo:BFO_0000141,
+        <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place>,
+        :Concept .
+
+:Organization a owl:Class ;
+    rdfs:label "organization"@en ;
+    dc:description "This class maps with the XML element \"TLCOrganization\" in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_TLCOrganization.html)."@en ;
+    rdfs:comment """An institution or recognizable group of individuals. Organizations can be formal or informal, have a strong degree of internal organization or be completely anarchic, have their own name or be anonymous, have their own legal status or be impromptu groups 
+
+E.g.: the workers’ union, France, the Socialist party, the proponents of bill 103/32, the President of the Italian Republic."""@en ;
+    rdfs:isDefinedBy <https://w3id.org/akn/ontology/allot> ;
+    rdfs:subClassOf obo:BFO_0000027,
+        <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Organization>,
+        :Concept .
 
 :Person a owl:Class ;
     rdfs:label "person"@en ;
@@ -124,6 +91,38 @@ E.g.: John Doe, the person with ID RSSMRA72H12L116B."""@en ;
     rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#NaturalPerson>,
         :Object .
 
+:Role a owl:Class ;
+    rdfs:label "role"@en ;
+    dc:description "This class maps with the XML element \"TLCRole\" in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_TLCRole.html)."@en ;
+    rdfs:comment """A part played by a person or an organization, in a certain situation. 
+
+E.g.: member of parliament, speaker, head of office, bill proposer."""@en ;
+    rdfs:isDefinedBy <https://w3id.org/akn/ontology/allot> ;
+    rdfs:subClassOf obo:BFO_0000023,
+        <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role>,
+        :Concept .
+
+:Term a owl:Class ;
+    rdfs:label "term"@en ;
+    dc:description "This class maps with the XML element \"TLCTerm\" in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_TLCTerm.html)."@en ;
+    rdfs:comment """A word or group of words whose meaning is defined in a formal and precise manner by means of a specific concept. 
+
+E.g.: opening sentence, rebuttal, impeachment."""@en ;
+    rdfs:isDefinedBy <https://w3id.org/akn/ontology/allot> ;
+    rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject>,
+        :Concept .
+
+:Event a owl:Class ;
+    rdfs:label "event"@en ;
+    dc:description "This class maps with the XML element \"TLCEvent\" in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_TLCEvent.html)."@en ;
+    rdfs:comment """Something that happened, will happen, may happen or have lasted. 
+
+E.g.: the World War II, the coming into force of act 27, Sunday 26th of August 2012."""@en ;
+    rdfs:isDefinedBy <https://w3id.org/akn/ontology/allot> ;
+    rdfs:subClassOf obo:BFO_0000003,
+        <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event>,
+        :Reference .
+
 :FRBRItem a owl:Class ;
     rdfs:label "item"@en ;
     dc:description "This class maps with the XML element \"FRBRItem\" in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_FRBRItem.html)."@en ;
@@ -132,16 +131,8 @@ E.g.: John Doe, the person with ID RSSMRA72H12L116B."""@en ;
 E.g.: the file called act32005.pdf on my computer containing a PDF representation of act 3, 2005."""@en ;
     rdfs:isDefinedBy <https://w3id.org/akn/ontology/allot> ;
     rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationRealization>,
-        :Object .
-
-:FRBRWork a owl:Class ;
-    rdfs:label "work"@en ;
-    dc:description "This class maps with the XML element \"FRBRWork\" in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_FRBRWork.html)."@en ;
-    rdfs:comment """The abstract concept of a legal resource. 
-
-E.g.: act 3 of 2005."""@en ;
-    rdfs:isDefinedBy <https://w3id.org/akn/ontology/allot> ;
-    rdfs:subClassOf :Concept .
+        :Object ;
+    owl:disjointWith :Person .
 
 :Object a owl:Class ;
     rdfs:label "object"@en ;
@@ -153,6 +144,22 @@ E.g.: a pen, a pet, a building."""@en ;
     rdfs:subClassOf obo:BFO_0000040,
         <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject>,
         :Reference .
+
+:FRBRWork a owl:Class ;
+    rdfs:label "work"@en ;
+    dc:description "This class maps with the XML element \"FRBRWork\" in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_FRBRWork.html)."@en ;
+    rdfs:comment """The abstract concept of a legal resource. 
+
+E.g.: act 3 of 2005."""@en ;
+    rdfs:isDefinedBy <https://w3id.org/akn/ontology/allot> ;
+    rdfs:subClassOf :Concept .
+
+:hasRelatedReference a owl:ObjectProperty ;
+    rdfs:label "has related reference"@en ;
+    rdfs:comment "This property allows one to link two instances of the class Reference that are related for some reason."@en ;
+    rdfs:domain :Reference ;
+    rdfs:isDefinedBy <https://w3id.org/akn/ontology/allot> ;
+    rdfs:range :Reference .
 
 :FRBRExpression a owl:Class ;
     rdfs:label "expression"@en ;
@@ -175,12 +182,14 @@ E.g.: PDF representation of act 3 of 2005 as in the version following the amendm
         <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality>,
         :Reference .
 
-:hasRelatedReference a owl:ObjectProperty ;
-    rdfs:label "has related reference"@en ;
-    rdfs:comment "This property allows one to link two instances of the class Reference that are related for some reason."@en ;
-    rdfs:domain :Reference ;
+:Reference a owl:Class ;
+    rdfs:label "reference"@en ;
+    dc:description "This class maps with the XML element \"TLCReference\" in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_TLCReference.html)."@en ;
+    rdfs:comment "A reference for any kind of entity."@en ;
     rdfs:isDefinedBy <https://w3id.org/akn/ontology/allot> ;
-    rdfs:range :Reference .
+    rdfs:subClassOf obo:BFO_0000001,
+        <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity>,
+        owl:Thing .
 
 :Concept a owl:Class ;
     rdfs:label "concept"@en ;
@@ -191,17 +200,7 @@ E.g.: the approval of an act, peace, child, Mickey Mouse, John Constantine, a cl
     rdfs:isDefinedBy <https://w3id.org/akn/ontology/allot> ;
     rdfs:subClassOf obo:BFO_0000002,
         <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialObject>,
-        :Reference ;
-    owl:disjointWith :Object .
-
-:Reference a owl:Class ;
-    rdfs:label "reference"@en ;
-    dc:description "This class maps with the XML element \"TLCReference\" in Akoma Ntoso (http://docs.oasis-open.org/legaldocml/akn-core/v1.0/csprd02/part2-specs/materials/akn-core-v1.0-csd02-part2-specs_xsd_Element_TLCReference.html)."@en ;
-    rdfs:comment "A reference for any kind of entity."@en ;
-    rdfs:isDefinedBy <https://w3id.org/akn/ontology/allot> ;
-    rdfs:subClassOf obo:BFO_0000001,
-        <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity>,
-        owl:Thing .
+        :Reference .
 
 <https://w3id.org/akn/ontology/allot> a owl:Ontology ;
     rdfs:label "ALLOT"@en ;
@@ -237,6 +236,12 @@ ALLOT (A Light Legal Ontology on TLCs) provides a formal implementation of such 
     owl:priorVersion <http://akn.web.cs.unibo.it/allot/core.owl> ;
     owl:versionIRI <https://w3id.org/akn/ontology/allot/2017-04-21> ;
     owl:versionInfo "April 21, 2017"^^xsd:string .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( :FRBRExpression :FRBRWork :Location :Organization :Role :Term ) .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( :Concept :Event :FRBRManifestation :Object ) .
 
 [] a owl:AllDisjointClasses ;
     owl:members ( :FRBRExpression :FRBRItem :FRBRManifestation :FRBRWork ) .

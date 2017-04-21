@@ -69,10 +69,10 @@
         "@id": "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Process"
       },
       {
-        "@id": "https://w3id.org/akn/ontology/allot/Event"
+        "@id": "http://purl.obolibrary.org/obo/BFO_0000015"
       },
       {
-        "@id": "http://purl.obolibrary.org/obo/BFO_0000015"
+        "@id": "https://w3id.org/akn/ontology/allot/Event"
       }
     ]
   },
@@ -112,18 +112,37 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://purl.obolibrary.org/obo/BFO_0000027"
-      },
-      {
         "@id": "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Organization"
       },
       {
         "@id": "https://w3id.org/akn/ontology/allot/Concept"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#disjointWith": [
+      },
       {
-        "@id": "https://w3id.org/akn/ontology/allot/Person"
+        "@id": "http://purl.obolibrary.org/obo/BFO_0000027"
+      }
+    ]
+  },
+  {
+    "@id": "_:N1243800d04d14c13ae9a77c9b61303da",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
+    ],
+    "http://www.w3.org/2002/07/owl#members": [
+      {
+        "@list": [
+          {
+            "@id": "https://w3id.org/akn/ontology/allot/Concept"
+          },
+          {
+            "@id": "https://w3id.org/akn/ontology/allot/Event"
+          },
+          {
+            "@id": "https://w3id.org/akn/ontology/allot/FRBRManifestation"
+          },
+          {
+            "@id": "https://w3id.org/akn/ontology/allot/Object"
+          }
+        ]
       }
     ]
   },
@@ -163,18 +182,13 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/akn/ontology/allot/Reference"
-      },
-      {
         "@id": "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialObject"
       },
       {
         "@id": "http://purl.obolibrary.org/obo/BFO_0000002"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#disjointWith": [
+      },
       {
-        "@id": "https://w3id.org/akn/ontology/allot/Object"
+        "@id": "https://w3id.org/akn/ontology/allot/Reference"
       }
     ]
   },
@@ -208,13 +222,13 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
+        "@id": "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject"
+      },
+      {
         "@id": "https://w3id.org/akn/ontology/allot/Reference"
       },
       {
         "@id": "http://purl.obolibrary.org/obo/BFO_0000040"
-      },
-      {
-        "@id": "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject"
       }
     ]
   },
@@ -297,6 +311,11 @@
       {
         "@id": "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationRealization"
       }
+    ],
+    "http://www.w3.org/2002/07/owl#disjointWith": [
+      {
+        "@id": "https://w3id.org/akn/ontology/allot/Person"
+      }
     ]
   },
   {
@@ -329,13 +348,13 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role"
-      },
-      {
         "@id": "http://purl.obolibrary.org/obo/BFO_0000023"
       },
       {
         "@id": "https://w3id.org/akn/ontology/allot/Concept"
+      },
+      {
+        "@id": "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Role"
       }
     ]
   },
@@ -374,6 +393,36 @@
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
         "@id": "https://w3id.org/akn/ontology/allot/hasRelatedReference"
+      }
+    ]
+  },
+  {
+    "@id": "_:N03aafbf193b1430a8c12d9d3033e8e2e",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
+    ],
+    "http://www.w3.org/2002/07/owl#members": [
+      {
+        "@list": [
+          {
+            "@id": "https://w3id.org/akn/ontology/allot/FRBRExpression"
+          },
+          {
+            "@id": "https://w3id.org/akn/ontology/allot/FRBRWork"
+          },
+          {
+            "@id": "https://w3id.org/akn/ontology/allot/Location"
+          },
+          {
+            "@id": "https://w3id.org/akn/ontology/allot/Organization"
+          },
+          {
+            "@id": "https://w3id.org/akn/ontology/allot/Role"
+          },
+          {
+            "@id": "https://w3id.org/akn/ontology/allot/Term"
+          }
+        ]
       }
     ]
   },
@@ -447,10 +496,10 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject"
+        "@id": "https://w3id.org/akn/ontology/allot/Concept"
       },
       {
-        "@id": "https://w3id.org/akn/ontology/allot/Concept"
+        "@id": "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject"
       }
     ]
   },
@@ -484,13 +533,37 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
+        "@id": "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality"
+      },
+      {
         "@id": "http://purl.obolibrary.org/obo/BFO_0000019"
       },
       {
         "@id": "https://w3id.org/akn/ontology/allot/Reference"
-      },
+      }
+    ]
+  },
+  {
+    "@id": "_:Ncfc988ef22d44a54a2cd2f43172d5167",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
+    ],
+    "http://www.w3.org/2002/07/owl#members": [
       {
-        "@id": "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality"
+        "@list": [
+          {
+            "@id": "https://w3id.org/akn/ontology/allot/FRBRExpression"
+          },
+          {
+            "@id": "https://w3id.org/akn/ontology/allot/FRBRItem"
+          },
+          {
+            "@id": "https://w3id.org/akn/ontology/allot/FRBRManifestation"
+          },
+          {
+            "@id": "https://w3id.org/akn/ontology/allot/FRBRWork"
+          }
+        ]
       }
     ]
   },
@@ -507,7 +580,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "_:N88160c7337e94638b20c37eb8db0c16e"
+        "@id": "_:N35561681711c4057954a72df6ce52a34"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -560,34 +633,10 @@
         "@id": "http://purl.obolibrary.org/obo/BFO_0000001"
       },
       {
-        "@id": "http://www.w3.org/2002/07/owl#Thing"
+        "@id": "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"
       },
       {
-        "@id": "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity"
-      }
-    ]
-  },
-  {
-    "@id": "_:N88160c7337e94638b20c37eb8db0c16e",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2002/07/owl#unionOf": [
-      {
-        "@list": [
-          {
-            "@id": "https://w3id.org/akn/ontology/allot/FRBRExpression"
-          },
-          {
-            "@id": "https://w3id.org/akn/ontology/allot/FRBRItem"
-          },
-          {
-            "@id": "https://w3id.org/akn/ontology/allot/FRBRManifestation"
-          },
-          {
-            "@id": "https://w3id.org/akn/ontology/allot/FRBRWork"
-          }
-        ]
+        "@id": "http://www.w3.org/2002/07/owl#Thing"
       }
     ]
   },
@@ -658,13 +707,37 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/akn/ontology/allot/Reference"
-      },
-      {
         "@id": "http://purl.obolibrary.org/obo/BFO_0000003"
       },
       {
         "@id": "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event"
+      },
+      {
+        "@id": "https://w3id.org/akn/ontology/allot/Reference"
+      }
+    ]
+  },
+  {
+    "@id": "_:N35561681711c4057954a72df6ce52a34",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@list": [
+          {
+            "@id": "https://w3id.org/akn/ontology/allot/FRBRExpression"
+          },
+          {
+            "@id": "https://w3id.org/akn/ontology/allot/FRBRItem"
+          },
+          {
+            "@id": "https://w3id.org/akn/ontology/allot/FRBRManifestation"
+          },
+          {
+            "@id": "https://w3id.org/akn/ontology/allot/FRBRWork"
+          }
+        ]
       }
     ]
   },
@@ -707,30 +780,6 @@
     ]
   },
   {
-    "@id": "_:N27ac54a5936740f3ad8eff63fb4dd59a",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AllDisjointClasses"
-    ],
-    "http://www.w3.org/2002/07/owl#members": [
-      {
-        "@list": [
-          {
-            "@id": "https://w3id.org/akn/ontology/allot/FRBRExpression"
-          },
-          {
-            "@id": "https://w3id.org/akn/ontology/allot/FRBRItem"
-          },
-          {
-            "@id": "https://w3id.org/akn/ontology/allot/FRBRManifestation"
-          },
-          {
-            "@id": "https://w3id.org/akn/ontology/allot/FRBRWork"
-          }
-        ]
-      }
-    ]
-  },
-  {
     "@id": "https://w3id.org/akn/ontology/allot/Location",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
@@ -760,10 +809,10 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://purl.obolibrary.org/obo/BFO_0000141"
+        "@id": "https://w3id.org/akn/ontology/allot/Concept"
       },
       {
-        "@id": "https://w3id.org/akn/ontology/allot/Concept"
+        "@id": "http://purl.obolibrary.org/obo/BFO_0000141"
       },
       {
         "@id": "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Place"
@@ -777,22 +826,22 @@
     ],
     "http://purl.org/dc/elements/1.1/creator": [
       {
-        "@value": "Francesco Poggi (http://orcid.org/0000-0001-6577-5606)"
-      },
-      {
-        "@value": "Gioele Barabucci (http://orcid.org/0000-0003-4586-0111)"
+        "@value": "Fabio Vitali (http://orcid.org/0000-0002-7562-5203)"
       },
       {
         "@value": "Silvio Peroni (http://orcid.org/0000-0003-0530-4305)"
       },
       {
-        "@value": "Angelo Di Iorio (http://orcid.org/0000-0002-6893-7452)"
+        "@value": "Gioele Barabucci (http://orcid.org/0000-0003-4586-0111)"
       },
       {
         "@value": "Monica Palmirani (http://orcid.org/0000-0002-8557-8084)"
       },
       {
-        "@value": "Fabio Vitali (http://orcid.org/0000-0002-7562-5203)"
+        "@value": "Angelo Di Iorio (http://orcid.org/0000-0002-6893-7452)"
+      },
+      {
+        "@value": "Francesco Poggi (http://orcid.org/0000-0001-6577-5606)"
       }
     ],
     "http://purl.org/dc/elements/1.1/description": [
