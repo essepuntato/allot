@@ -3,7 +3,7 @@
                     function () {
                     	jQuery(".markdown").each(function(el){
 							jQuery(this).after(marked(jQuery(this).text())).remove()});
-                        var list = $('a[name="http://rawgit.com/essepuntato/allot/master/ontology/current/allot.xml"]');
+                        var list = $('a[name="https://cdn.jsdelivr.net/gh/essepuntato/allot/ontology/current/allot.xml"]');
                         if (list.size() != 0) {
                         	var element = list.first();
                         	$.scrollTo(element);
